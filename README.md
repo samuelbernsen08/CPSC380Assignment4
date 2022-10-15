@@ -25,6 +25,10 @@ Source files:
 references:
 
 - Lucas Gaudet
+- https://www.guru99.com/cpp-structures.html
+- https://www.geeksforgeeks.org/structures-in-cpp/
+- https://www.geeksforgeeks.org/bubble-sort/
+- https://www.geeksforgeeks.org/program-for-fcfs-cpu-scheduling-set-1/
 
 Running the program:
 
