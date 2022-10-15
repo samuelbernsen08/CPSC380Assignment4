@@ -34,29 +34,20 @@ void schedule()
     {
         struct node* tempNode = head;
         struct task* tempTask = head->task;
-        struct task* shortestTask;
+        struct task* shortestTask = tempTask;
 
 
-        struct node* tempNode0 = head;
-        int sizeOfList = 0;
-        while (tempNode0->next != NULL)
+        //struct node* tempNode0 = head;
+        
+        while (tempNode->next != NULL)
         {
-            sizeOfList++;
-            tempNode0 = tempNode0->next;
-        }
-
-        for (int i = 0; i < sizeOfList - 1; i++)
-        {
-            for (int j = 0; j < sizeOfList - 1; j++)
+            tempNode = tempNode->next;
+            tempTask = tempNode->task;
+            if(shortestTask->burst > tempTask->burst)
             {
-                if (tempNode->task->burst > tempNode->next->task->burst)
-                {
-                    swapNodes(tempNode, tempNode->next);
-                    tempNode = tempNode->next;
-                }
+                shortestTask = tempTask;
             }
         }
-        shortestTask = head->task;
 
         run(shortestTask, shortestTask->burst);
         delete(&head, shortestTask);
